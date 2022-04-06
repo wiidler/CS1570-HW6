@@ -23,7 +23,7 @@ int main(){
         cout << endl;
     }
     */
-    beginInfestation(infestationMap, ROWS, COLUMNS);
+    beginInfestation(infestationMap);
     exportMap(infestationMap, ROWS, COLUMNS);
     return 0;
 }  

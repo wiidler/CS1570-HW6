@@ -19,7 +19,7 @@ void initializeMap(string array[][COLUMNS], const int ROWS, const int COLUMNS){
     fin.close();
     return;
 }
-void beginInfestation(string array[][COLUMNS], const int ROWS, const int COLUMNS){
+void beginInfestation(string array[][COLUMNS]){
     ifstream fin;
     fin.open("input.txt");
     int inputRow = -1;
