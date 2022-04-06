@@ -25,7 +25,7 @@ void beginInfestation(string array[][COLUMNS]){
     int inputRow = -1;
     int inputColumn = -1;
     int lineNum = 0;
-    string inputBuffer;
+    string inputBuffer = "";
     while(lineNum != 10){
         fin >> inputBuffer;
         lineNum++;
@@ -34,7 +34,7 @@ void beginInfestation(string array[][COLUMNS]){
         fin >> inputRow;
         fin >> inputColumn;
         cout << inputRow << " " << inputColumn << endl;
-        if((inputRow != 0 || inputRow != 9) && (inputColumn != 0 || inputColumn != 9)){
+        if((inputRow != 0 && inputRow != 9) && (inputColumn != 0 && inputColumn != 9)){
             if(array[inputRow][inputColumn] == "_"){
                 array[inputRow][inputColumn] == "B";
             }
@@ -151,11 +151,12 @@ void beginInfestation(string array[][COLUMNS]){
                 }
             }
         }
-        else{
+        else if((inputRow == 0 || inputRow == 9) || (inputColumn == 0 || inputColumn == 9)){
             if(array[inputRow][inputColumn] == "_"){
                 array[inputRow][inputColumn] == "B";
             }
             else if(inputRow == 0 && inputColumn == 0){
+                cout << "we made it here" << endl;
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow + 1][inputColumn] == "_"){
                         array[inputRow + 1][inputColumn] = "B";
@@ -637,7 +638,7 @@ void beginInfestation(string array[][COLUMNS]){
                 }
             }
         }
-    }while(fin);
+    }while(fin >> inputRow && fin >> inputColumn);
     fin.close();
     return;
 }
