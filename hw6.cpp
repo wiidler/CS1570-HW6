@@ -24,5 +24,6 @@ int main(){
     }
     */
     beginInfestation(infestationMap, ROWS, COLUMNS);
+    exportMap(infestationMap, ROWS, COLUMNS);
     return 0;
-}
+}  
