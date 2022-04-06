@@ -16,4 +16,8 @@ void initializeMap(string array[][COLUMNS], const int ROWS, const int COLUMNS);
 // Pre:
 // Post:
 void beginInfestation(string array[][COLUMNS], const int ROWS, const int COLUMNS);
+// Definition:
+// Pre:
+// Post:
+void exportMap(string array[][COLUMNS], const int ROWS, const int COLUMNS);
 #endif
