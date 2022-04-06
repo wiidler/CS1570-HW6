@@ -14,16 +14,11 @@ using namespace std;
 
 int main(){
     string infestationMap[ROWS][COLUMNS];
+    cout << "Initializing map from input file..." << endl;
     initializeMap(infestationMap, ROWS, COLUMNS);
-    /*
-    for(int i = 0; i < ROWS; i++){
-        for(int j = 0; j < COLUMNS; j++){ //USED FOR TESTING LATER?
-            cout << infestationMap[i][j];
-        }
-        cout << endl;
-    }
-    */
+    cout << "Beginning infestation." << endl;
     beginInfestation(infestationMap);
+    cout << "Reporting results to output file..." << endl;
     exportMap(infestationMap, ROWS, COLUMNS);
     return 0;
 }  
