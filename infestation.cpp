@@ -33,11 +33,11 @@ void beginInfestation(string array[][COLUMNS]){
     do{
         fin >> inputRow;
         fin >> inputColumn;
-        if((inputRow != LEFTANDUP && inputRow != RIGHTANDDOWN) && (inputColumn != LEFTANDUP && inputColumn != RIGHTANDDOWN)){
-            if(array[inputRow][inputColumn] == "_"){
+        if((inputRow != LEFTANDUP && inputRow != RIGHTANDDOWN) && (inputColumn != LEFTANDUP && inputColumn != RIGHTANDDOWN)){ // if point is not on the ouside rows or columns
+            if(array[inputRow][inputColumn] == "_"){ // no outbreak occurs here
                 array[inputRow][inputColumn] = "B";
             }
-            else if(array[inputRow][inputColumn] == "B" || array[inputRow][inputColumn] == "W" || array[inputRow][inputColumn] == "T"){
+            else if(array[inputRow][inputColumn] == "B" || array[inputRow][inputColumn] == "W" || array[inputRow][inputColumn] == "T"){ // if an outbreak ocurrs...
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow - 1][inputColumn - 1] == "_"){
                         array[inputRow - 1][inputColumn - 1] = "B";
@@ -150,11 +150,11 @@ void beginInfestation(string array[][COLUMNS]){
                 }
             }
         }
-        else if((inputRow == LEFTANDUP || inputRow == RIGHTANDDOWN) || (inputColumn == LEFTANDUP || inputColumn == RIGHTANDDOWN)){
+        else if((inputRow == LEFTANDUP || inputRow == RIGHTANDDOWN) || (inputColumn == LEFTANDUP || inputColumn == RIGHTANDDOWN)){ // if point is on the outside rows or columns
             if(array[inputRow][inputColumn] == "_"){
                 array[inputRow][inputColumn] = "B";
             }
-            else if(inputRow == LEFTANDUP && inputColumn == LEFTANDUP){
+            else if(inputRow == LEFTANDUP && inputColumn == LEFTANDUP){ // if (0,0)
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow + 1][inputColumn] == "_"){
                         array[inputRow + 1][inputColumn] = "B";
@@ -201,7 +201,7 @@ void beginInfestation(string array[][COLUMNS]){
                     array[inputRow + 1][inputColumn + 1] = "T";
                 }
             }
-            else if(inputRow == LEFTANDUP && inputColumn == RIGHTANDDOWN){
+            else if(inputRow == LEFTANDUP && inputColumn == RIGHTANDDOWN){ // if (0,9)
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow][inputColumn - 1] == "_"){
                         array[inputRow][inputColumn - 1] = "B";
@@ -249,7 +249,7 @@ void beginInfestation(string array[][COLUMNS]){
 
                 }
             }
-            else if(inputRow == RIGHTANDDOWN && inputColumn == LEFTANDUP){
+            else if(inputRow == RIGHTANDDOWN && inputColumn == LEFTANDUP){ // if (9,0)
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow - 1][inputColumn] == "_"){
                         array[inputRow - 1][inputColumn] = "B";
@@ -296,7 +296,7 @@ void beginInfestation(string array[][COLUMNS]){
                     array[inputRow][inputColumn + 1] = "T";
                 }
             }
-            else if(inputRow == RIGHTANDDOWN && inputColumn == RIGHTANDDOWN){
+            else if(inputRow == RIGHTANDDOWN && inputColumn == RIGHTANDDOWN){ // if (9,9)
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow][inputColumn - 1] == "_"){
                         array[inputRow][inputColumn - 1] = "B";
@@ -343,7 +343,7 @@ void beginInfestation(string array[][COLUMNS]){
                     array[inputRow - 1][inputColumn] = "T";;
                 }
             }
-            else if((inputRow > LEFTANDUP && inputRow < RIGHTANDDOWN) && inputColumn == LEFTANDUP){
+            else if((inputRow > LEFTANDUP && inputRow < RIGHTANDDOWN) && inputColumn == LEFTANDUP){ // if on leftmost column
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow - 1][inputColumn] == "_"){
                         array[inputRow - 1][inputColumn] = "B";
@@ -416,7 +416,7 @@ void beginInfestation(string array[][COLUMNS]){
                     array[inputRow + 1][inputColumn + 1] = "T";
                 }
             }
-            else if((inputRow > LEFTANDUP && inputRow < RIGHTANDDOWN) && inputColumn == LEFTANDUP){
+            else if((inputRow > LEFTANDUP && inputRow < RIGHTANDDOWN) && inputColumn == RIGHTANDDOWN){ // if on rightmost column
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow - 1][inputColumn] == "_"){
                         array[inputRow - 1][inputColumn] = "B";
@@ -489,7 +489,7 @@ void beginInfestation(string array[][COLUMNS]){
                     array[inputRow + 1][inputColumn] = "T";
                 }
             }
-            else if((inputColumn > LEFTANDUP && inputColumn < RIGHTANDDOWN) && inputRow == LEFTANDUP){
+            else if((inputColumn > LEFTANDUP && inputColumn < RIGHTANDDOWN) && inputRow == LEFTANDUP){ // if on upper row
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow][inputColumn - 1] == "_"){
                         array[inputRow][inputColumn - 1] = "B";
@@ -562,7 +562,7 @@ void beginInfestation(string array[][COLUMNS]){
                     array[inputRow][inputColumn + 1] = "T";
                 }
             }
-            else if((inputColumn > LEFTANDUP && inputColumn < RIGHTANDDOWN) && inputRow == RIGHTANDDOWN){
+            else if((inputColumn > LEFTANDUP && inputColumn < RIGHTANDDOWN) && inputRow == RIGHTANDDOWN){ // if on lower row
                 if(array[inputRow][inputColumn] == "B"){
                     if(array[inputRow][inputColumn - 1] == "_"){
                         array[inputRow][inputColumn - 1] = "B";
